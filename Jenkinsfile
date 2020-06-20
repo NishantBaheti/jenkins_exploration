@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage('Install Node'){
 			steps{
-				sh "apt install nodejs"
+				sh "sudo apt install nodejs"
 			}
 		}
 		stage("Start NodeJsAPI Integration"){
