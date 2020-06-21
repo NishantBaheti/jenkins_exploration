@@ -12,9 +12,6 @@ job('NodeJs Example'){
 		nodejs('nodejs')
 	}
 	steps {
-		script{
-		sh "cd nodejsApi"
-		sh "npm install"
-		}
+		shell("cd nodeJsApi && npm install")
 	}
 }
