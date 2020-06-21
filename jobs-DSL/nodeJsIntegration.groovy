@@ -6,7 +6,7 @@ job('NodeJs Example'){
 		scm('H/5 * * * *')
 	}
 	wrappers {
-		nodeks('nodejs')
+		nodejs('nodejs')
 	}
 	steps {
 		shell("cd nodeJsApi")
