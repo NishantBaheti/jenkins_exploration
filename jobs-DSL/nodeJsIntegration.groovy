@@ -12,6 +12,7 @@ job('NodeJs Example'){
 		nodejs('nodejs')
 	}
 	steps {
-		shell("cd nodeJsApi \ npm install")
+		shell("cd nodeJsApi ")
+		shell("npm install")
 	}
 }
