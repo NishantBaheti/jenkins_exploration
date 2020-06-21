@@ -9,6 +9,7 @@ job('NodeJs Example'){
 		nodeks('nodejs')
 	}
 	steps {
+		shell("cd nodeJsApi")
 		shell("npm install")
 	}
 }
