@@ -1,5 +1,9 @@
 pipeline{
-	agent any
+	agent {
+		docker {
+			image "ubuntu:16.04"
+		}
+	}
 	stages {
 		stage('update Ubunutu'){
 			steps{
