@@ -19,25 +19,26 @@ pipeline{
 		stage("Start NodeJsAPI Integration"){
 			
 			steps{
+				sh "ls -lah"
+				sh "cd nodeJsApi"
 				nodejs('nodejs') {
-					sh "ls -lah"
-					sh "cd nodeJsApi"
 					sh "npm install"
-					sh "cd .."
 				}
+				sh "cd .."
 			}
 		}
 		stage("Start Build ReactJs APP"){
 			steps{
+				sh "ls -lah"
+				sh "cd reactUI"
+				sh "cd bazooka"
 				nodejs('nodejs') {
-					sh "ls -lah"
-					sh "cd reactUI/bazooka"
 					sh "npm install"
 					sh "npm run build"
-					sh "cd build"
-					sh "zip -r build.war ."
-					sh "mv build.war .."
 				}
+				sh "cd build"
+				sh "zip -r build.war ."
+				sh "mv build.war .."
 			}
 		}
 	}
