@@ -17,28 +17,25 @@ pipeline{
 		// 	}
 		// }
 		stage("Start NodeJsAPI Integration"){
-			
 			steps{
 				sh "ls -lah"
-				sh "cd nodeJsApi"
-				nodejs('nodejs') {
-					sh "npm install"
+				dir("nodeJsApi"){
+					nodejs('nodejs') {
+						sh "npm install"
+					}
 				}
-				sh "cd .."
 			}
 		}
 		stage("Start Build ReactJs APP"){
 			steps{
 				sh "ls -lah"
-				sh "cd reactUI"
-				sh "cd bazooka"
-				nodejs('nodejs') {
-					sh "npm install"
-					sh "npm run build"
+				dir("reactUI/bazooka"){
+					nodejs('nodejs') {
+						sh "npm install"
+						sh "npm run build"
+					}
 				}
-				sh "cd build"
-				sh "zip -r build.war ."
-				sh "mv build.war .."
+				sh "cd build || zip -r build.war . || mv build.war .."
 			}
 		}
 	}
