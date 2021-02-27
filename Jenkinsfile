@@ -11,13 +11,13 @@ pipeline{
 				sh "apt-get update -y"
 			}
 		}
-		stage('Install Node'){
-			steps{
-				sh "apt install nodejs -y"
-			}
-		}
+		// stage('Install Node'){
+		// 	steps{
+		// 		sh "apt install nodejs -y"
+		// 	}
+		// }
 		stage("Start NodeJsAPI Integration"){
-			steps{
+			nodejs('nodejs') {
 				sh "ls -lah"
 				sh "cd nodeJsApi"
 				sh "npm install"
@@ -25,7 +25,7 @@ pipeline{
 			}
 		}
 		stage("Start Build ReactJs APP"){
-			steps{
+			nodejs('nodejs'){
 				sh "cd reactUI/bazooka"
 				sh "npm install"
 				sh "npm run build"
