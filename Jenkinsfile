@@ -8,12 +8,12 @@ pipeline{
 	stages {
 		stage('update Ubunutu'){
 			steps{
-				sh "sudo apt-get update"
+				sh "apt-get update"
 			}
 		}
 		stage('Install Node'){
 			steps{
-				sh "sudo apt install nodejs"
+				sh "apt install nodejs"
 			}
 		}
 		stage("Start NodeJsAPI Integration"){
