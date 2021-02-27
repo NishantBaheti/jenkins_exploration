@@ -18,8 +18,10 @@ pipeline{
 		// }
 		stage("Start NodeJsAPI Integration"){
 			steps{
+				sh "ls -lah"
 				sh "cd nodeJsAPI"
 				sh "npm install"
+				sh "cd .."
 			}
 		}
 		stage("Start Build ReactJs APP"){
