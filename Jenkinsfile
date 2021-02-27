@@ -30,6 +30,7 @@ pipeline{
 		stage("Start Build ReactJs APP"){
 			steps{
 				nodejs('nodejs') {
+					sh "ls -lah"
 					sh "cd reactUI/bazooka"
 					sh "npm install"
 					sh "npm run build"
