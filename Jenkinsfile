@@ -35,7 +35,7 @@ pipeline{
 						sh "npm run build"
 					}
 				}
-				sh "cd build || zip -r build.war . || mv build.war .."
+				// sh "cd build || zip -r build.war . || mv build.war .."
 			}
 		}
 	}
