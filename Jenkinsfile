@@ -6,16 +6,16 @@ pipeline{
 	// 	}
 	// }
 	stages {
-		// stage('update Ubunutu'){
-		// 	steps{
-		// 		sh "apt-get update"
-		// 	}
-		// }
-		// stage('Install Node'){
-		// 	steps{
-		// 		sh "apt install nodejs"
-		// 	}
-		// }
+		stage('update Ubunutu'){
+			steps{
+				sh "apt-get update -y"
+			}
+		}
+		stage('Install Node'){
+			steps{
+				sh "apt install nodejs -y"
+			}
+		}
 		stage("Start NodeJsAPI Integration"){
 			steps{
 				sh "ls -lah"
